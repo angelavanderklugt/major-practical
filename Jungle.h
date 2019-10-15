@@ -1,23 +1,23 @@
-#ifndef SAVANNA_H
-#define SAVANNA_H
+#ifndef JUNGLE_H
+#define JUNGLE_H
 #include <string>
 #include <iostream>
 #include "Hunter.h"
 using namespace std;
 
-class Savanna: public Hunter{
+class Jungle: public Hunter{
 
 public:
-	Savanna();
-	Savanna(std::string SavAnim);
-	std::string sAnim;
+	Jungle();
+	Jungle(std::string JungAnim);
+	std::string jAnim;
 	int get_rarity();
 	string get_animal(int rarity);
-	static int ScurrentID;
+	static int JcurrentID;
 	int get_ID();
 	int randNum;
 	int id;
-	~Savanna();
+	~Jungle();
 };
 
 #endif
