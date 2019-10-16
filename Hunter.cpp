@@ -4,8 +4,8 @@
 using namespace std;
 
 Hunter::Hunter() {
-	Name = "?"
-	Occup = "Hunter"
+	Name = "?";
+	Occup = "Hunter";
 }
 
 Hunter::Hunter(string PlayName, string Job) {
