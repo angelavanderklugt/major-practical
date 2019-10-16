@@ -1,19 +1,16 @@
 #include "Jungle.h"
-#include "Hunter.h"
+#include "Terrain.h"
 #include <string>
 #include <iostream>
 using namespace std;
-char JanimArr[3][10]={"Monkey","Piranha","Cougar"};
-int Jungle::JcurrentID=1;
+char JanimArr[3][10]={"Snake","Piranha","Cougar"};
+int jung_id = 0;
+string jung_location;
 
-Jungle::Jungle(string PlayName):Hunter(PlayName){
-id=JcurrentID++;
-}
-
-int Jungle::get_rarity(){
-srand(time(NULL));
-int randNum = (rand() % 6) + 1;
-return randNum;
+Jungle::Jungle(string Location):Terrain(Location){
+jung_id++;
+jung_location = Location;
+jterrain = new Terrain(jung_location);
 }
 
 string Jungle::get_animal(int rarity){
@@ -30,10 +27,6 @@ case 5: return JanimArr[1];
 break;
 case 6: return JanimArr[2];
 }
-}
-
-int Jungle::get_ID(){
-return id;
 }
 
 Jungle::~Jungle(){

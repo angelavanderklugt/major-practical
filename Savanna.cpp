@@ -1,19 +1,16 @@
 #include "Savanna.h"
-#include "Hunter.h"
+#include "Terrain.h"
 #include <string>
 #include <iostream>
 using namespace std;
-char SanimArr[3][10]={"Zebra","Hyena","Cheetah"};
-int Savanna::ScurrentID=1;
+char SanimArr[3][10]={"Hyena","Lion","Leopard"};
+int sav_id = 0;
+string sav_location;
 
-Savanna::Savanna(string PlayName):Hunter(PlayName){
-id=ScurrentID++;
-}
-
-int Savanna::get_rarity(){
-srand(time(NULL));
-int randNum = (rand() % 6) + 1;
-return randNum;
+Savanna::Savanna(string Location):Terrain(Location){
+sav_location = Location;
+sterrain = new Terrain(sav_location);
+sav_id++;
 }
 
 string Savanna::get_animal(int rarity){
@@ -30,10 +27,6 @@ case 5: return SanimArr[1];
 break;
 case 6: return SanimArr[2];
 }
-}
-
-int Savanna::get_ID(){
-return id;
 }
 
 Savanna::~Savanna(){

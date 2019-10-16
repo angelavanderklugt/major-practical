@@ -2,21 +2,23 @@
 #define JUNGLE_H
 #include <string>
 #include <iostream>
-#include "Hunter.h"
+#include "Terrain.h"
 using namespace std;
 
-class Jungle: public Hunter{
+class Jungle: public Terrain{
+
+private:
+	int jung_id;
+
+protected:
+	Terrain* jterrain;
 
 public:
 	Jungle();
-	Jungle(std::string JungAnim);
+	Jungle(string Location);
 	std::string jAnim;
-	int get_rarity();
 	string get_animal(int rarity);
-	static int JcurrentID;
-	int get_ID();
 	int randNum;
-	int id;
 	~Jungle();
 };
 

@@ -2,21 +2,23 @@
 #define MOUNTAIN_H
 #include <string>
 #include <iostream>
-#include "Hunter.h"
+#include "Terrain.h"
 using namespace std;
 
-class Mountain: public Hunter{
+class Mountain: public Terrain{
+
+private:
+	int mount_id;
+
+protected:
+	Terrain* mterrain;
 
 public:
 	Mountain();
-	Mountain(std::string MountAnim);
-	std::string mAnim;
-	int get_rarity();
+	Mountain(string Location);
+	string mAnim;
 	string get_animal(int rarity);
-	static int McurrentID;
-	int get_ID();
 	int randNum;
-	int id;
 	~Mountain();
 };
 

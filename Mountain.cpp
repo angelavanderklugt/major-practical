@@ -1,19 +1,16 @@
 #include "Mountain.h"
-#include "Hunter.h"
+#include "Terrain.h"
 #include <string>
 #include <iostream>
 using namespace std;
-char ManimArr[3][10]={"gazelle","Eagle","Bear"};
-int Mountain::McurrentID=1;
+char ManimArr[3][10]={"Fox","Eagle","Bear"};
+int mount_id = 0;
+string mount_location;
 
-Mountain::Mountain(string PlayName):Hunter(PlayName){
-id=McurrentID++;
-}
-
-int Mountain::get_rarity(){
-srand(time(NULL));
-int randNum = (rand() % 6) + 1;
-return randNum;
+Mountain::Mountain(string Location):Terrain(Location){
+mount_id++;
+mount_location = Location;
+mterrain = new Terrain(mount_location);
 }
 
 string Mountain::get_animal(int rarity){
@@ -30,10 +27,6 @@ case 5: return ManimArr[1];
 break;
 case 6: return ManimArr[2];
 }
-}
-
-int Mountain::get_ID(){
-return id;
 }
 
 Mountain::~Mountain(){

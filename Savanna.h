@@ -2,21 +2,23 @@
 #define SAVANNA_H
 #include <string>
 #include <iostream>
-#include "Hunter.h"
+#include "Terrain.h"
 using namespace std;
 
-class Savanna: public Hunter{
+class Savanna: public Terrain{
+
+private:
+	int sav_id;
+
+protected:
+	Terrain* sterrain;
 
 public:
 	Savanna();
-	Savanna(std::string SavAnim);
-	std::string sAnim;
-	int get_rarity();
+	Savanna(string Location);
+	string sAnim;
 	string get_animal(int rarity);
-	static int ScurrentID;
-	int get_ID();
 	int randNum;
-	int id;
 	~Savanna();
 };
 

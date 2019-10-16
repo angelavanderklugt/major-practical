@@ -1,20 +1,23 @@
 all:make
 
-make: Savanna.o Jungle.o Mountain.o Hunter.o
-	g++ main-1-1.cpp Savanna.o Jungle.o Mountain.o Hunter.o
+make: Hunter.o Terrain.o Mountain.o Savanna.o Jungle.o
+	g++ main.cpp Hunter.o Terrain.o Mountain.o Savanna.o Jungle.o
 	./a.out
 
-Savanna.o: Savanna.cpp Savanna.h
-	g++ -c Savanna.cpp -o Savanna.o
+Hunter.o: Hunter.cpp Hunter.h
+	g++ -c Hunter.cpp
 
-Jungle.o: Jungle.cpp Jungle.h
-	g++ -c Jungle.cpp -o Jungle.o
+Terrain.o: Terrain.cpp Terrain.h
+	g++ -c Terrain.cpp
 
 Mountain.o: Mountain.cpp Mountain.h
-	g++ -c Mountain.cpp -o Mountain.o
+	g++ -c Mountain.cpp
 
-Hunter.o: Hunter.cpp Hunter.h
-	g++ -c Hunter.cpp -o Hunter.o
+Savanna.o: Savanna.cpp Savanna.h
+	g++ -c Savanna.cpp
+
+Jungle.o: Jungle.cpp Jungle.h
+	g++ -c Jungle.cpp
 
 clean:
 	rm -rf *o make
