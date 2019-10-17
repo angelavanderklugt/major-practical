@@ -19,5 +19,11 @@ Savanna.o: Savanna.cpp Savanna.h
 Jungle.o: Jungle.cpp Jungle.h
 	g++ -c Jungle.cpp
 
+Test1: Hunter.o Terrain.o Mountain.o Savanna.o Jungle.o
+	g++ -std=c++11 main.cpp Hunter.o Terrain.o Mountain.o Savanna.o Jungle.o -o test1
+	./test1 < input-1-1.txt > output-1-1.txt
+
+Test: Test1
+
 clean:
 	rm -rf *o make
