@@ -11,6 +11,25 @@ using namespace std;
 
 int main() {
 
+// This section is adding items to the Inventory
+	Hunter *ItemFound;
+	ItemFound = new Hunter();
+	ItemFound -> AddItem("Rifle");
+	ItemFound -> AddItem("Gun");
+
+	string * Inventory;
+	Inventory = ItemFound -> getItems();
+
+	cout << endl;
+	for (int i = 0; i < (ItemFound -> getItemCount()); i++) {
+		cout << Inventory[i] << " ";
+	}
+	//delete ItemFound;
+	cout << endl;
+	cout << endl;
+
+// End of Inventory section
+
 	string choice, yes;
 
 	cout << "Choose a desired location you wish to explore" << endl;
