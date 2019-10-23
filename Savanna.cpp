@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 using namespace std;
+//creating a string array with Savanna animals
 char SanimArr[3][10]={"Hyena","Lion","Leopard"};
 int sav_id = 0;
 string sav_location;
@@ -13,6 +14,7 @@ sterrain = new Terrain(sav_location);
 sav_id++;
 }
 
+//switch function to return animal from string array depending on rarity.
 string Savanna::get_animal(int rarity){
 switch (rarity){
 case 1: return SanimArr[0];
